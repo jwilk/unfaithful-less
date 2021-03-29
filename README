@@ -1,0 +1,24 @@
+.. code:: console
+
+   $ less -FX hello.c
+   #include <stdio.h>
+   #include <stdlib.h>
+
+   int main(int argc, char **argv)
+   {
+           /* Copyright 2015-2016 Jakub Wilk */
+           printf("Hello world!\n");
+           return 0;
+   }
+
+   $ gcc -Wall hello.c -o hello && ./hello
+    ________
+   < ^H^H^H >
+    --------
+           \   ^__^
+            \  (oo)\_______
+               (__)\       )\/\
+                   ||----w |
+                   ||     ||
+
+.. vim:ts=3 sts=3 sw=3 et ft=rst
