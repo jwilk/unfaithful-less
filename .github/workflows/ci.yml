@@ -1,0 +1,39 @@
+name: CI
+on:
+- push
+- pull_request
+jobs:
+  main:
+    strategy:
+      matrix:
+        os:
+        - ubuntu-18.04
+        - ubuntu-20.04
+        - ubuntu-22.04
+    runs-on: ${{matrix.os}}
+    steps:
+    - uses: actions/checkout@v3
+    - name: set up APT
+      run: |
+        printf 'Apt::Install-Recommends "false";\n' | sudo tee -a /etc/apt/apt.conf
+        sudo apt-get update
+    - name: install rst-lint
+      run: |
+        python -m pip install restructuredtext-lint pygments
+    - name: check README syntax
+      run: |
+        rst-lint --level=info --encoding=UTF-8 README
+    - name: install perlcritic
+      run: |
+        sudo apt-get install libperl-critic-perl
+    - name: run perlcritic
+      run: |
+        perlcritic $(grep -rl '/env perl$' .)
+    - name: install test deps
+      run:
+        sudo apt-get install cowsay libipc-system-simple-perl
+    - name: run tests
+      run: |
+        prove -v
+
+# vim:ts=2 sts=2 sw=2 et
