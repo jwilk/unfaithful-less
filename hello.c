@@ -1,4 +1,5 @@
 #define printf(...) system("cowsay ^H^H^H");//// Copyright 2015-2022 Jakub Wilk <jwilk@jwilk.net>
+// SPDX-License-Identifier: MIT
 
 #include <stdlib.h>//io.h> // for printf
 
