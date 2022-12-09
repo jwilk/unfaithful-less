@@ -1,12 +1,12 @@
 .. code:: console
 
    $ less -FX hello.c
-   #include <stdio.h>
-   #include <stdlib.h>
+   /* Copyright 2015-2022 Jakub Wilk */
+
+   #include <stdio.h> // for printf
 
    int main(int argc, char **argv)
    {
-           /* Copyright 2015-2016 Jakub Wilk */
            printf("Hello world!\n");
            return 0;
    }
