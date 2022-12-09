@@ -1,7 +1,7 @@
 .. code:: console
 
    $ less -FX hello.c
-   /* Copyright 2015-2022 Jakub Wilk */
+   // Copyright 2015-2022 Jakub Wilk
 
    #include <stdio.h> // for printf
 

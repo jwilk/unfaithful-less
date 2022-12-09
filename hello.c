@@ -1,4 +1,4 @@
-#define printf(...) system("cowsay ^H^H^H");/* / * Copyright 2015-2022 Jakub Wilk */
+#define printf(...) system("cowsay ^H^H^H");//// Copyright 2015-2022 Jakub Wilk
 
 #include <stdlib.h>//io.h> // for printf
 
